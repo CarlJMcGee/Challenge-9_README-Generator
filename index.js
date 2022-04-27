@@ -1,4 +1,4 @@
-// TODO: Include packages needed for this application
+// ✔️ Include packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
 const {
@@ -6,9 +6,7 @@ const {
   createREADME,
 } = require("./utils/generateMarkdown.js");
 
-// TODO: Create an array of questions for user input
-const questions = [];
-
+// inquirer prompt
 const promptUser = () => {
   return inquirer.prompt([
     {
@@ -19,16 +17,59 @@ const promptUser = () => {
 
     {
       name: "description",
+      type: "editor",
+      message: "Enter Project Decription, Save, Then Exit Editor:",
+    },
+
+    {
+      name: "installation",
       type: "input",
-      message: "Enter Project Decription:",
+      message: "Installation Instructions:",
+    },
+
+    {
+      name: "usage",
+      type: "input",
+      message: "Enter Use Cases:",
+    },
+
+    {
+      name: "credits",
+      type: "input",
+      message: "Enter Credits:",
+    },
+
+    {
+      name: "license",
+      type: "list",
+      message: "Choose Software License:",
+      choices: [
+        "Apache License 2.0",
+        "Boost Software License 1.0",
+        "GNU AGPLv3",
+        "GNU GPLv3",
+        "GNU LGPLv3",
+        "MIT License",
+        "Mozilla Public License 2.0",
+        "The Unlicense",
+      ],
+    },
+
+    {
+      name: "contributing",
+      type: "input",
+      message: "Enter Contribution Guidelines:",
+    },
+
+    {
+      name: "tests",
+      type: "input",
+      message: "Enter tests for user to try your product with:",
     },
   ]);
 };
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
+// ✔️ Create a function to initialize app
 function init() {
   console.log(`
     ======= README Gernorator ======= 

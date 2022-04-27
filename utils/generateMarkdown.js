@@ -2,7 +2,14 @@ const fs = require("fs");
 
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+const renderLicenseBadge = (license) => {
+  let licenseSplitArr = license.split(" ");
+  let licenseShort = licenseSplitArr.join("--");
+
+  return `
+  ![license badge](https://img.shields.io/badge/${licenseShort}-MIT-blue);
+  `;
+};
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -12,9 +19,18 @@ function renderLicenseLink(license) {}
 // If there is no license, return an empty string
 function renderLicenseSection(license) {}
 
-// TODO: Create a function to generate markdown for README
+// ✔️ Create a function to generate markdown for README
 const generateMarkdown = (data) => {
-  const { title, description } = data;
+  const {
+    title,
+    description,
+    installation,
+    usage,
+    credits,
+    license,
+    contributing,
+    tests,
+  } = data;
 
   return `
   # ${title}
@@ -22,6 +38,30 @@ const generateMarkdown = (data) => {
   ## Description
   
   ${description}
+
+  ## Installation
+
+  ${installation}
+
+  ## Usage
+
+  ${usage}
+
+  ## Credits
+
+  ${credits}
+
+  ## License
+
+  ${renderLicenseBadge(license)}
+
+  ## Contributing
+
+  ${contributing}
+
+  ## Tests
+
+  ${tests}
   `;
 };
 
