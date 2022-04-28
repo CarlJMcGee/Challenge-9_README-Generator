@@ -19,6 +19,25 @@ function renderLicenseLink(license) {}
 // If there is no license, return an empty string
 function renderLicenseSection(license) {}
 
+const contributeCreate = (confirm, guideline) => {
+  if (confirm) {
+    fs.copyFile(
+      "./src/code_of_conduct.md",
+      "./dist/code_of_conduct.md",
+      (err) => {
+        if (err) {
+          console.error(err);
+        }
+      }
+    );
+    return `
+  [Click to see the Contributor Covenant contribution guidelines](./code_of_conduct.md)
+    `;
+  } else {
+    return guideline;
+  }
+};
+
 // ✔️ Create a function to generate markdown for README
 const generateMarkdown = (data) => {
   const {
@@ -29,6 +48,7 @@ const generateMarkdown = (data) => {
     credits,
     license,
     contributing,
+    contributingCustom,
     tests,
   } = data;
 
@@ -71,7 +91,7 @@ const generateMarkdown = (data) => {
 
   ## Contributing
 
-  ${contributing}
+  ${contributeCreate(contributing, contributingCustom)}
 
   ## Tests
 

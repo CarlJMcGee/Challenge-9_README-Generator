@@ -57,8 +57,22 @@ const promptUser = () => {
 
     {
       name: "contributing",
+      type: "confirm",
+      message:
+        "Would you like to use Contributor Covenant? Type N to create a custom Contributor Guideline",
+    },
+
+    {
+      name: "contributingCustom",
       type: "input",
-      message: "Enter Contribution Guidelines:",
+      message: "Enter Custom Contribution Guideline:",
+      when: ({ contributing }) => {
+        if (!contributing) {
+          return true;
+        } else {
+          return false;
+        }
+      },
     },
 
     {
