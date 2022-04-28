@@ -39,6 +39,20 @@ const generateMarkdown = (data) => {
   
   ${description}
 
+  ## Table of Contents
+
+  - [Installation](#Installation)
+
+  - [Usage](#Usage)
+
+  - [Credits](#Credits)
+
+  - [License](#License)
+
+  - [Contributing](#Contributing)
+
+  - [Tests](#Tests)
+
   ## Installation
 
   ${installation}

@@ -77,8 +77,6 @@ function init() {
 
   promptUser()
     .then((promptResp) => {
-      console.log(promptResp);
-      console.log(generateMarkdown(promptResp));
       return generateMarkdown(promptResp);
     })
     .then((markdown) => {
