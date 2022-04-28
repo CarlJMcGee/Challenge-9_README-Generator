@@ -13,12 +13,58 @@ const renderLicenseBadge = (license) => {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+const renderLicenseLink = (license) => {
+  switch (license) {
+    case "Apache License 2.0":
+      fs.copyFile("./src/apache.txt", "./dist/apache.txt");
+      return `./apache.txt`;
+      break;
+
+    case "Boost Software License 1.0":
+      fs.copyFile("./src/boost.txt", "./dist/boost.txt");
+      return `./boost.txt`;
+      break;
+
+    case "GNU AGPLv3":
+      fs.copyFile("./src/agpl-3.txt", "./dist/agpl-3.txt");
+      return `./agpl-3.txt`;
+      break;
+
+    case "GNU GPLv3":
+      fs.copyFile("./src/gpl-3.txt", "./dist/gpl-3.txt");
+      return `./gpl-3.txt`;
+      break;
+
+    case "GNU LGPLv3":
+      fs.copyFile("./src/lgpl-3.txt", "./dist/lgpl-3.txt");
+      return `./lgpl-3.txt`;
+      break;
+
+    case "MIT License":
+      fs.copyFile("./src/mit.txt", "./dist/mit.txt");
+      return `./mit.txt`;
+      break;
+
+    case "Mozilla Public License 2.0":
+      fs.copyFile("./src/mozilla.txt", "./dist/mozilla.txt");
+      return `./mozilla.txt`;
+      break;
+
+    case "The Unlicense":
+      fs.copyFile("./src/unlicense.txt", "./dist/unlicense.txt");
+      return `./unlicense.txt`;
+      break;
+
+    default:
+      break;
+  }
+};
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {}
 
+// check for stock or custom guideline
 const contributeCreate = (confirm, guideline) => {
   if (confirm) {
     fs.copyFile(
@@ -87,7 +133,7 @@ const generateMarkdown = (data) => {
 
   ## License
 
-  ${renderLicenseBadge(license)}
+  [${renderLicenseBadge(license)}](${renderLicenseLink(license)})
 
   ## Contributing
 

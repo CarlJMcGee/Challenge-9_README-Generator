@@ -1,9 +1,9 @@
 
-  # 
+  # project
   
   ## Description
   
-  
+  lorem itsum...
 
   ## Table of Contents
 
@@ -21,21 +21,21 @@
 
   ## Installation
 
-  
+  nom i
 
   ## Usage
 
-  
+  none
 
   ## Credits
 
-  
+  me
 
   ## License
 
-  
-  ![license badge](https://img.shields.io/badge/Apache--License--2.0-MIT-blue);
-  
+  [
+  ![license badge](https://img.shields.io/badge/MIT--License-MIT-blue);
+  ](./mit.txt)
 
   ## Contributing
 
@@ -45,5 +45,5 @@
 
   ## Tests
 
-  
+  test
   
