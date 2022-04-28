@@ -3,7 +3,7 @@
   
   ## Description
   
-  lorem itsum...
+  lorem ipsum...
 
   ## Table of Contents
 
@@ -21,7 +21,7 @@
 
   ## Installation
 
-  nom i
+  npm i
 
   ## Usage
 

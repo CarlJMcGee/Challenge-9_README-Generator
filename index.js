@@ -35,8 +35,8 @@ const promptUser = () => {
 
     {
       name: "credits",
-      type: "input",
-      message: "Enter Credits:",
+      type: "editor",
+      message: "Enter Credits, Save, Then Exit Editor:",
     },
 
     {

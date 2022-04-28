@@ -16,42 +16,74 @@ const renderLicenseBadge = (license) => {
 const renderLicenseLink = (license) => {
   switch (license) {
     case "Apache License 2.0":
-      fs.copyFile("./src/apache.txt", "./dist/apache.txt");
+      fs.copyFile("./src/apache.txt", "./dist/apache.txt", (err) => {
+        if (err) {
+          console.error(err);
+        }
+      });
       return `./apache.txt`;
       break;
 
     case "Boost Software License 1.0":
-      fs.copyFile("./src/boost.txt", "./dist/boost.txt");
+      fs.copyFile("./src/boost.txt", "./dist/boost.txt", (err) => {
+        if (err) {
+          console.error(err);
+        }
+      });
       return `./boost.txt`;
       break;
 
     case "GNU AGPLv3":
-      fs.copyFile("./src/agpl-3.txt", "./dist/agpl-3.txt");
+      fs.copyFile("./src/agpl-3.txt", "./dist/agpl-3.txt", (err) => {
+        if (err) {
+          console.error(err);
+        }
+      });
       return `./agpl-3.txt`;
       break;
 
     case "GNU GPLv3":
-      fs.copyFile("./src/gpl-3.txt", "./dist/gpl-3.txt");
+      fs.copyFile("./src/gpl-3.txt", "./dist/gpl-3.txt", (err) => {
+        if (err) {
+          console.error(err);
+        }
+      });
       return `./gpl-3.txt`;
       break;
 
     case "GNU LGPLv3":
-      fs.copyFile("./src/lgpl-3.txt", "./dist/lgpl-3.txt");
+      fs.copyFile("./src/lgpl-3.txt", "./dist/lgpl-3.txt", (err) => {
+        if (err) {
+          console.error(err);
+        }
+      });
       return `./lgpl-3.txt`;
       break;
 
     case "MIT License":
-      fs.copyFile("./src/mit.txt", "./dist/mit.txt");
+      fs.copyFile("./src/mit.txt", "./dist/mit.txt", (err) => {
+        if (err) {
+          console.error(err);
+        }
+      });
       return `./mit.txt`;
       break;
 
     case "Mozilla Public License 2.0":
-      fs.copyFile("./src/mozilla.txt", "./dist/mozilla.txt");
+      fs.copyFile("./src/mozilla.txt", "./dist/mozilla.txt", (err) => {
+        if (err) {
+          console.error(err);
+        }
+      });
       return `./mozilla.txt`;
       break;
 
     case "The Unlicense":
-      fs.copyFile("./src/unlicense.txt", "./dist/unlicense.txt");
+      fs.copyFile("./src/unlicense.txt", "./dist/unlicense.txt", (err) => {
+        if (err) {
+          console.error(err);
+        }
+      });
       return `./unlicense.txt`;
       break;
 
@@ -77,7 +109,7 @@ const contributeCreate = (confirm, guideline) => {
       }
     );
     return `
-  [Click to see the Contributor Covenant contribution guidelines](./code_of_conduct.md)
+  [Click to see the Contributor Covenant guidelines](./code_of_conduct.md)
     `;
   } else {
     return guideline;
