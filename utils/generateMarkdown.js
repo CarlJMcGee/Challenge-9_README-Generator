@@ -37,7 +37,7 @@ const renderLicenseLink = (license) => {
       break;
 
     case "GNU AGPLv3":
-      if (!"./dist/agpl-3.txt") {
+      if (!fs.existsSync("./dist/agpl-3.txt")) {
         fs.copyFile("./src/agpl-3.txt", "./dist/agpl-3.txt", (err) => {
           if (err) {
             console.error(err);
@@ -48,7 +48,7 @@ const renderLicenseLink = (license) => {
       break;
 
     case "GNU GPLv3":
-      if (!"./dist/gpl-3.txt") {
+      if (!fs.existsSync("./dist/gpl-3.txt")) {
         fs.copyFile("./src/gpl-3.txt", "./dist/gpl-3.txt", (err) => {
           if (err) {
             console.error(err);
@@ -59,7 +59,7 @@ const renderLicenseLink = (license) => {
       break;
 
     case "GNU LGPLv3":
-      if (!"./dist/lgpl-3.txt") {
+      if (!fs.existsSync("./dist/lgpl-3.txt")) {
         fs.copyFile("./src/lgpl-3.txt", "./dist/lgpl-3.txt", (err) => {
           if (err) {
             console.error(err);
@@ -70,7 +70,7 @@ const renderLicenseLink = (license) => {
       break;
 
     case "MIT License":
-      if (!"./dist/mit.txt") {
+      if (!fs.existsSync("./dist/mit.txt")) {
         fs.copyFile("./src/mit.txt", "./dist/mit.txt", (err) => {
           if (err) {
             console.error(err);
@@ -81,7 +81,7 @@ const renderLicenseLink = (license) => {
       break;
 
     case "Mozilla Public License 2.0":
-      if (!"./dist/mozilla.txt") {
+      if (!fs.existsSync("./dist/mozilla.txt")) {
         fs.copyFile("./src/mozilla.txt", "./dist/mozilla.txt", (err) => {
           if (err) {
             console.error(err);
@@ -92,7 +92,7 @@ const renderLicenseLink = (license) => {
       break;
 
     case "The Unlicense":
-      if (!"./dist/unlicense.txt") {
+      if (!fs.existsSync("./dist/unlicense.txt")) {
         fs.copyFile("./src/unlicense.txt", "./dist/unlicense.txt", (err) => {
           if (err) {
             console.error(err);
