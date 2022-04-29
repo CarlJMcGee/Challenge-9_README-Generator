@@ -1,3 +1,13 @@
 node_modules/
 .DS_Store/
 
+dist/README.md
+dist/agpl-3.txt
+dist/apache.txt
+dist/boost.txt
+dist/code_of_conduct.md
+dist/gpl-3.txt
+dist/lgpl-3.txt
+dist/mit.txt
+dist/mozilla.txt
+dist/unlicense.txt
