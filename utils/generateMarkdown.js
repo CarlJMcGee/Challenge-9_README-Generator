@@ -6,9 +6,7 @@ const renderLicenseBadge = (license) => {
   let licenseSplitArr = license.split(" ");
   let licenseShort = licenseSplitArr.join("--");
 
-  return `
-  ![license badge](https://img.shields.io/badge/license-${licenseShort}-blue);
-  `;
+  return `![license badge](https://img.shields.io/badge/license-${licenseShort}-blue)`;
 };
 
 // If there is no license, return an empty string
@@ -103,6 +101,7 @@ const renderLicenseLink = (license) => {
       break;
 
     default:
+      return "Switch broken";
       break;
   }
 };
@@ -117,8 +116,7 @@ const renderLicenseSection = (license) => {
   return `
 ## License
 
-[This project uses ${license}](${renderLicenseLink(license)})
-`;
+[This project uses ${license}](${renderLicenseLink(license)})`;
 };
 
 // check for stock or custom guideline
@@ -133,9 +131,7 @@ const contributeCreate = (confirm, guideline) => {
         }
       }
     );
-    return `
-  [Click to see the Contributor Covenant guidelines](./code_of_conduct.md)
-    `;
+    return `[Click to see the Contributor Covenant guidelines](./code_of_conduct.md)`;
   } else {
     return guideline;
   }
@@ -191,7 +187,6 @@ ${usage}
 ## Credits
 
 ${credits}
-
 ${renderLicenseSection(license)}
 
 ## Contributing
