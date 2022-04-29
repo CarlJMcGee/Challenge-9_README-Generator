@@ -176,6 +176,8 @@ ${description}
 
 - [Tests](#tests)
 
+- [Questions](#questions)
+
 ## Installation
 
 ${installation}
