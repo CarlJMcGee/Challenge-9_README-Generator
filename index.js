@@ -85,6 +85,18 @@ const promptUser = () => {
       type: "input",
       message: "Enter tests for user to try your product with:",
     },
+
+    {
+      name: "email",
+      type: "input",
+      message: "Enter Your Email Address:",
+    },
+
+    {
+      name: "github",
+      type: "input",
+      message: "Enter Your Github Username:",
+    },
   ]);
 };
 

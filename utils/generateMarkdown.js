@@ -153,6 +153,8 @@ const generateMarkdown = (data) => {
     contributing,
     contributingCustom,
     tests,
+    email,
+    github,
   } = data;
 
   return `
@@ -199,6 +201,14 @@ ${contributeCreate(contributing, contributingCustom)}
 ## Tests
 
 ${tests}
+
+## Questions?
+
+If you have any issues, submit them to my [Github](https://github.com/${github})
+
+or
+
+If you have any other questions or inquiries, you can contact me at [${email}](mailto:${email})
   `;
 };
 
