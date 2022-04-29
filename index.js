@@ -1,5 +1,6 @@
 // ✔️ Include packages needed for this application
 const fs = require("fs");
+const fsPromises = require("fs/promises");
 const inquirer = require("inquirer");
 const {
   generateMarkdown,
@@ -44,6 +45,7 @@ const promptUser = () => {
       type: "list",
       message: "Choose Software License:",
       choices: [
+        "None",
         "Apache License 2.0",
         "Boost Software License 1.0",
         "GNU AGPLv3",
@@ -53,6 +55,9 @@ const promptUser = () => {
         "Mozilla Public License 2.0",
         "The Unlicense",
       ],
+      pageSize: 9,
+      loop: false,
+      default: "None",
     },
 
     {

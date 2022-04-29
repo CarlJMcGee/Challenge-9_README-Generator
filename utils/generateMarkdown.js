@@ -1,4 +1,5 @@
 const fs = require("fs");
+const fsPromises = require("fs/promises");
 
 // If there is no license, return an empty string
 const renderLicenseBadge = (license) => {
@@ -106,9 +107,19 @@ const renderLicenseLink = (license) => {
   }
 };
 
-// TODO: Create a function that returns the license section of README
+// ✔️ Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+const renderLicenseSection = (license) => {
+  if (license === "None") {
+    return "";
+  }
+
+  return `
+## License
+
+[This project uses ${license}](${renderLicenseLink(license)})
+`;
+};
 
 // check for stock or custom guideline
 const contributeCreate = (confirm, guideline) => {
@@ -145,51 +156,49 @@ const generateMarkdown = (data) => {
   } = data;
 
   return `
-  # ${title}
-  
-  [${renderLicenseBadge(license)}](${renderLicenseLink(license)})
-  
-  ## Description
-  
-  ${description}
+# ${title}
 
-  ## Table of Contents
+[${renderLicenseBadge(license)}](#License)
 
-  - [Installation](#Installation)
+## Description
 
-  - [Usage](#Usage)
+${description}
 
-  - [Credits](#Credits)
+## Table of Contents
 
-  - [License](#License)
+- [Installation](#Installation)
 
-  - [Contributing](#Contributing)
+- [Usage](#Usage)
 
-  - [Tests](#Tests)
+- [Credits](#Credits)
 
-  ## Installation
+- [License](#License)
 
-  ${installation}
+- [Contributing](#Contributing)
 
-  ## Usage
+- [Tests](#Tests)
 
-  ${usage}
+## Installation
 
-  ## Credits
+${installation}
 
-  ${credits}
+## Usage
 
-  ## License
+${usage}
 
-  [This project uses ${license}](${renderLicenseLink(license)})
+## Credits
 
-  ## Contributing
+${credits}
 
-  ${contributeCreate(contributing, contributingCustom)}
+${renderLicenseSection(license)}
 
-  ## Tests
+## Contributing
 
-  ${tests}
+${contributeCreate(contributing, contributingCustom)}
+
+## Tests
+
+${tests}
   `;
 };
 
