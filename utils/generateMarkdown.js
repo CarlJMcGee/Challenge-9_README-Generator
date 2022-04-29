@@ -164,17 +164,17 @@ ${description}
 
 ## Table of Contents
 
-- [Installation](#Installation)
+- [Installation](#installation)
 
-- [Usage](#Usage)
+- [Usage](#usage)
 
-- [Credits](#Credits)
+- [Credits](#credits)
 
-- [License](#License)
+- [License](#license)
 
-- [Contributing](#Contributing)
+- [Contributing](#contributing)
 
-- [Tests](#Tests)
+- [Tests](#tests)
 
 ## Installation
 
