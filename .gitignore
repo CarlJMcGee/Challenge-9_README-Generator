@@ -1,6 +1,9 @@
 node_modules/
 .DS_Store/
 
+readme-guide.md
+instructions.md
+
 dist/README.md
 dist/agpl-3.txt
 dist/apache.txt
